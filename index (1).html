@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>indubio – Anki-Karteikarten für das Erste Staatsexamen</title>
+<meta name="description" content="Professionelle Anki-Karteikarten für die Examensvorbereitung im Jurastudium. Zivilrecht, Öffentliches Recht, Strafrecht – didaktisch strukturiert und klausurnah.">
+<meta property="og:title" content="indubio – Anki-Karteikarten für das Erste Staatsexamen">
+<meta property="og:description" content="Professionelle Anki-Karteikarten für die Examensvorbereitung. Klausurnah. Systematisch. Auf den Punkt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://in-dubio.de">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--bg-secondary:#f8f7f5;--bg-tertiary:#f1efec;--text:#1d1d1f;--text-secondary:#6e6e73;--text-tertiary:#a1a1a6;--accent:#FF9500;--accent-light:rgba(255,149,0,.08);--accent-medium:rgba(255,149,0,.15);--accent-highlight:rgba(255,149,0,.28);--green:#27ae60;--red:#e74c3c;--gray:#999;--border:rgba(0,0,0,.06);--border-strong:rgba(0,0,0,.1);--card-shadow:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.03);--card-shadow-hover:0 2px 8px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);--sans:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',sans-serif;--serif:'Newsreader',Georgia,serif;--max-width:1120px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:60px}body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}::selection{background:var(--accent-medium)}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:0 3rem;height:52px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-size:1.15rem;font-weight:600;letter-spacing:-.01em;color:var(--text);text-decoration:none}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s}.nav-links a:hover{color:var(--text)}
+.nav-cta{padding:.4rem 1.1rem;background:var(--accent);color:#fff;border:none;border-radius:980px;font-family:var(--sans);font-size:.8rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all .2s}.nav-cta:hover{background:#e88600}
+
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem}
+.hero-overline{font-size:.8rem;font-weight:500;letter-spacing:.04em;color:var(--accent);margin-bottom:1.5rem}
+.hero h1{font-family:var(--sans);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.5rem;max-width:780px}
+.hero-underline{position:relative;display:inline-block}.hero-underline svg{position:absolute;left:-4px;bottom:-10px;width:calc(100% + 8px);height:20px;pointer-events:none}.hero-underline svg path{fill:none;stroke:#1d1d1f;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:500;stroke-dashoffset:500;animation:drawLine .8s ease forwards}.hero-underline svg path:nth-child(2){animation-delay:.5s}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+.hero-sub{font-size:1.15rem;color:var(--text-secondary);max-width:540px;line-height:1.6;font-weight:400;margin-bottom:2.5rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.4rem;padding:.85rem 2rem;background:var(--accent);color:#fff;border:none;border-radius:980px;font-family:var(--sans);font-size:.95rem;font-weight:500;cursor:pointer;transition:all .25s;text-decoration:none}.btn-primary:hover{background:#e88600;transform:scale(1.02)}
+
+section{padding:6rem 2rem}.container{max-width:var(--max-width);margin:0 auto}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-.025em;line-height:1.15;margin-bottom:1rem}
+.section-subtitle{font-size:1.05rem;color:var(--text-secondary);line-height:1.65;max-width:560px}
+
+/* ─── Problem ─── */
+.problem{background:var(--bg-secondary)}.problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:3rem}
+.problem-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:box-shadow .3s;position:relative}.problem-card:hover{box-shadow:var(--card-shadow-hover)}
+.problem-number{font-size:.7rem;font-weight:600;color:var(--text-tertiary);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.8rem}
+.problem-card h3{font-size:1.05rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.5rem}.problem-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.6}
+.mark-circle{position:relative;display:inline}.mark-circle svg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:150%;height:320%;pointer-events:none;opacity:0;transition:opacity .25s}.mark-circle svg ellipse{fill:none;stroke:#1d1d1f;stroke-width:1.8;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300}
+.problem-card:hover .mark-circle svg{opacity:1}.problem-card:hover .mark-circle svg ellipse{animation:drawCircle .6s ease forwards}@keyframes drawCircle{to{stroke-dashoffset:0}}
+.mark-highlight{position:relative;display:inline}.mark-highlight::after{content:'';position:absolute;left:-3px;right:-3px;bottom:0;height:42%;background:var(--accent-highlight);z-index:-1;transform:rotate(-.6deg) scaleX(0);transform-origin:left;transition:transform .4s ease;border-radius:2px}.problem-card:hover .mark-highlight::after{transform:rotate(-.6deg) scaleX(1)}
+.mark-dbl-underline{position:relative;display:inline}.mark-dbl-underline svg{position:absolute;left:-2px;bottom:-7px;width:calc(100% + 4px);height:14px;pointer-events:none;opacity:0;transition:opacity .25s}.mark-dbl-underline svg path{fill:none;stroke:#1d1d1f;stroke-width:1.6;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300}
+.problem-card:hover .mark-dbl-underline svg{opacity:1}.problem-card:hover .mark-dbl-underline svg path{animation:drawLine .5s ease forwards}.problem-card:hover .mark-dbl-underline svg path:nth-child(2){animation-delay:.3s}
+.mark-highlight-b{position:relative;display:inline}.mark-highlight-b::after{content:'';position:absolute;left:-3px;right:-3px;bottom:0;height:42%;background:var(--accent-highlight);z-index:-1;transform:rotate(.4deg) scaleX(0);transform-origin:left;transition:transform .4s ease;border-radius:2px}.problem-card:hover .mark-highlight-b::after{transform:rotate(.4deg) scaleX(1)}
+
+/* ─── Solution with focus effect (using filter, not opacity) ─── */
+.solution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.solution-card{padding:2rem;border-radius:16px;border:1px solid var(--border);background:var(--bg);transition:all .35s ease;filter:brightness(1);transform:scale(1)}
+.solution-grid:hover .solution-card{filter:brightness(.92);transform:scale(.97)}
+.solution-grid .solution-card:hover{filter:brightness(1)!important;transform:scale(1)!important;border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),var(--card-shadow)}
+.solution-icon{width:40px;height:40px;background:var(--accent-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1.2rem}.solution-card h3{font-size:1rem;font-weight:600;margin-bottom:.5rem}.solution-card p{font-size:.88rem;color:var(--text-secondary);line-height:1.6}
+
+/* ─── Approach section (two-column text) ─── */
+.approach{background:var(--bg);border-top:1px solid var(--border)}
+.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
+.approach-block h3{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;margin-bottom:1rem}
+.approach-block p{font-size:.92rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1rem}
+.approach-block p:last-child{margin-bottom:0}
+.approach-accent{color:var(--accent);font-weight:600}
+
+/* ─── Audience strip ─── */
+.audience{background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3.5rem 2rem;text-align:center}
+.audience-inner{max-width:680px;margin:0 auto}
+.audience-inner h3{font-size:1.2rem;font-weight:700;letter-spacing:-.015em;margin-bottom:1rem}
+.audience-inner p{font-size:.95rem;color:var(--text-secondary);line-height:1.7}
+
+/* ─── Preview ─── */
+.preview{background:var(--bg-secondary)}
+.preview-tabs{display:flex;gap:.5rem;margin-bottom:0;margin-top:2rem;flex-wrap:wrap}
+.preview-tab{padding:.5rem 1.2rem;border-radius:980px;border:1px solid var(--border-strong);background:var(--bg);font-family:var(--sans);font-size:.82rem;font-weight:500;color:var(--text-secondary);cursor:pointer;transition:all .2s}.preview-tab.active{background:var(--text);color:#fff;border-color:var(--text)}
+.preview-description{margin:1.5rem 0 2rem;padding:1.2rem 1.5rem;background:var(--bg);border:1px solid var(--border);border-radius:12px;font-size:.88rem;color:var(--text-secondary);line-height:1.7}
+.preview-showcase{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.anki-card{background:var(--bg);border:1px solid var(--border-strong);border-radius:14px;overflow:hidden;box-shadow:var(--card-shadow)}
+.anki-card-label{padding:.7rem 1.5rem;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);border-bottom:1px solid var(--border);background:var(--bg-secondary)}
+.anki-card-body{padding:1.5rem;font-size:.9rem;line-height:1.8}.anki-front .anki-card-body{font-size:.95rem}
+.anki-norm{font-weight:700}.anki-p{color:var(--accent);font-weight:700}.anki-m{color:var(--accent);font-weight:600}.anki-pro{color:var(--green)}.anki-contra{color:var(--red)}.anki-def{font-style:italic;color:var(--text-secondary)}.anki-def b{color:var(--text)}.anki-result{margin-top:.8rem}.anki-bsp{color:var(--gray);font-size:.82rem}.anki-method{font-style:italic}
+.anki-annotation{grid-column:1/-1;background:var(--bg);border:1px solid var(--border-strong);border-radius:14px;overflow:hidden;box-shadow:var(--card-shadow)}.anki-annotation .anki-card-body{color:var(--gray);font-size:.85rem;line-height:1.7}
+.anki-schema{border:2px solid var(--green);border-radius:10px;padding:1.2rem;margin-top:.5rem;font-size:.85rem;line-height:1.7}.anki-schema ol{padding-left:1.2rem}.anki-schema li{margin-bottom:.8rem}.anki-schema b{font-weight:600}
+
+/* ─── Products ─── */
+.products-section{background:var(--bg)}.products-wrapper{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.product-column{display:flex;flex-direction:column}.product-column-header{display:flex;align-items:center;gap:.6rem;padding-bottom:1rem;border-bottom:2px solid var(--text);margin-bottom:1rem}
+.product-column-header h3{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}.product-column-header .emoji{font-size:1.2rem}.product-column-count{font-size:.75rem;color:var(--text-tertiary);font-weight:400;margin-left:auto}
+.product-item{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid var(--border);transition:all .2s}.product-item:hover{padding-left:.3rem}
+.product-name{font-size:.88rem;font-weight:500;color:var(--text);flex:1}.product-name small{display:block;font-size:.75rem;font-weight:400;color:var(--text-tertiary);margin-top:.15rem}
+.product-buy{display:flex;align-items:center;gap:.8rem}.product-price{font-size:.85rem;font-weight:600;color:var(--text)}
+.btn-buy{padding:.4rem 1rem;background:var(--accent-light);color:var(--accent);border:none;border-radius:980px;font-family:var(--sans);font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;text-decoration:none;white-space:nowrap}.btn-buy:hover{background:var(--accent);color:#fff}
+.product-item.coming-soon{opacity:.4}.product-item.coming-soon .btn-buy{display:none}.product-item.coming-soon .product-price{display:none}
+.coming-soon-badge{font-size:.68rem;color:var(--text-tertiary);font-weight:500;font-style:italic}
+
+/* ─── FAQ ─── */
+.faq{background:var(--bg-secondary)}.faq-list{max-width:680px;margin:2.5rem auto 0}.faq-item{border-bottom:1px solid var(--border-strong);padding:1.5rem 0}
+.faq-question{font-size:1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;letter-spacing:-.01em}.faq-question::after{content:'+';font-size:1.3rem;font-weight:300;color:var(--text-tertiary);transition:transform .3s;flex-shrink:0;margin-left:1rem}.faq-item.open .faq-question::after{transform:rotate(45deg)}
+.faq-answer{color:var(--text-secondary);font-size:.9rem;line-height:1.7;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}.faq-item.open .faq-answer{max-height:300px;padding-top:.8rem}
+
+.final-cta{text-align:center;padding:7rem 2rem;background:var(--bg)}.final-cta h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;letter-spacing:-.025em;margin-bottom:1rem}.final-cta p{color:var(--text-secondary);margin-bottom:2rem;font-size:1rem}
+footer{border-top:1px solid var(--border);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}.footer-left{font-size:.8rem;color:var(--text-tertiary)}.footer-links{display:flex;gap:1.8rem;list-style:none}.footer-links a{color:var(--text-tertiary);text-decoration:none;font-size:.8rem;transition:color .2s}.footer-links a:hover{color:var(--text-secondary)}
+@media(max-width:900px){nav{padding:0 1.5rem}.nav-links{display:none}.problem-grid{grid-template-columns:1fr}.solution-grid{grid-template-columns:1fr}.approach-grid{grid-template-columns:1fr;gap:2rem}.preview-showcase{grid-template-columns:1fr}.products-wrapper{grid-template-columns:1fr;gap:3rem}footer{flex-direction:column;text-align:center;padding:2rem 1.5rem}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}.hero-overline,.hero h1,.hero-sub,.hero-cta-wrap{animation:fadeUp .7s ease forwards;opacity:0}.hero h1{animation-delay:.1s}.hero-sub{animation-delay:.2s}.hero-cta-wrap{animation-delay:.3s}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">in<span>dubio</span></a>
+  <ul class="nav-links">
+    <li><a href="#problem">Warum indubio</a></li>
+    <li><a href="#vorschau">Vorschau</a></li>
+    <li><a href="#decks">Karteikarten</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#decks" class="nav-cta">Decks ansehen</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <p class="hero-overline">Anki-Karteikarten für das Erste juristische Staatsexamen</p>
+  <h1>Deine Karteikarten für das Examen.<br>Klausurnah <span class="hero-underline">formuliert.<svg viewBox="0 0 155 20" preserveAspectRatio="none"><path d="M2 5 Q35 3, 78 6 Q120 8, 153 4"/><path d="M3 13 Q40 10, 80 13 Q115 15, 152 11"/></svg></span></h1>
+  <p class="hero-sub">Meinungsstreite, Schemata, Definitionen – didaktisch strukturiert und von Juristen mit Prädikatsexamen entwickelt. Für alle drei Rechtsgebiete.</p>
+  <div class="hero-cta-wrap"><a href="#decks" class="btn-primary">Karteikarten ansehen ↓</a></div>
+</section>
+
+<!-- Problem -->
+<section class="problem" id="problem">
+  <div class="container">
+    <span class="section-label">Das Problem</span>
+    <h2 class="section-title">Du willst lernen, nicht formulieren.</h2>
+    <p class="section-subtitle">Die Examensvorbereitung ist ohnehin der härteste Abschnitt im Studium. Wer jetzt noch tausende Karteikarten selbst schreiben muss, verliert wertvolle Zeit.</p>
+    <div class="problem-grid">
+      <div class="problem-card"><div class="problem-number">01</div><h3><span class="mark-circle">Keine Zeit<svg viewBox="0 0 120 50"><ellipse cx="60" cy="25" rx="55" ry="20" transform="rotate(-1.5 60 25)"/></svg></span>, eigene Karten zu schreiben</h3><p>Wer den Stoff für drei Rechtsgebiete parallel lernt, hat keine Kapazität, tausende Karteikarten selbst zu formulieren – und schon gar nicht gut.</p></div>
+      <div class="problem-card"><div class="problem-number">02</div><h3>Am Anfang fehlt das <span class="mark-highlight">didaktische Know-how</span></h3><p>Welche Struktur braucht eine Meinungsstreitkarte? Was gehört auf die Vorderseite, was in die Anmerkung? Das lernt man erst mit Erfahrung – die am Anfang fehlt.</p></div>
+      <div class="problem-card"><div class="problem-number">03</div><h3>Die ersten Entwürfe landen <span class="mark-dbl-underline">im Papierkorb<svg viewBox="0 0 130 14"><path d="M2 4 Q33 2, 65 5 Q97 6, 128 3"/><path d="M3 10 Q35 8, 66 11 Q98 12, 127 9"/></svg></span></h3><p>Jeder, der eigene Karten geschrieben hat, kennt es: Nach ein paar Monaten schreibt man alles nochmal neu, weil man es jetzt besser weiß. Doppelte Arbeit.</p></div>
+      <div class="problem-card"><div class="problem-number">04</div><h3>Am Ende fehlt die Zeit für das Wesentliche</h3><p>Was am Ende die Note macht, ist nicht Wissen aufschreiben – sondern <span class="mark-highlight-b">Klausuren schreiben</span>. Wer seine Zeit mit Kartenformulierung verbringt, übt zu wenig.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution -->
+<section class="solution" id="loesung">
+  <div class="container">
+    <span class="section-label">Die Lösung</span>
+    <h2 class="section-title">Fertige Karten.<br>Sofort loslegen.</h2>
+    <p class="section-subtitle">indubio-Karten sind so formuliert, wie du sie in der Klausur brauchen wirst.</p>
+    <div class="solution-grid">
+      <div class="solution-card"><div class="solution-icon">⚖️</div><h3>Klausurnah formuliert</h3><p>Jede Karte ist auf die Anwendung in der Klausur ausgelegt – mit Meinungsstreitstrukturen, Schemata und Definitionen, die du direkt im Gutachten verwenden kannst.</p></div>
+      <div class="solution-card"><div class="solution-icon">🎯</div><h3>Vier Kartentypen</h3><p>Meinungsstreitkarten mit Pro/Contra-Argumenten, Schemakarten mit Prüfungsaufbau, Definitionskarten und Erklär-Karten. Jeder Typ folgt einem festen System.</p></div>
+      <div class="solution-card"><div class="solution-icon">📐</div><h3>Didaktisch durchdacht</h3><p>Farbcodierung nach Argumenttyp, einheitliche Auslegungsmethoden, Klausurhinweise und Verweise zwischen Karten. Kein Chaos, nur Klarheit.</p></div>
+      <div class="solution-card"><div class="solution-icon">📖</div><h3>Alle drei Rechtsgebiete</h3><p>Zivilrecht, Öffentliches Recht und Strafrecht – vom AT bis zu den Nebengebieten. Der gesamte Pflichtfachstoff in einem einheitlichen System.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔁</div><h3>Spaced Repetition mit Anki</h3><p>Anki zeigt dir jede Karte genau dann, wenn du sie zu vergessen drohst. Kein planloses Wiederholen – wissenschaftlich fundiertes Lernen.</p></div>
+      <div class="solution-card"><div class="solution-icon">🌙</div><h3>Dark Mode optimiert</h3><p>Jede Karte funktioniert im hellen und dunklen Modus. Für die Bib um 8 Uhr und für den Schreibtisch um 2 Uhr nachts.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Approach: Depth section -->
+<section class="approach">
+  <div class="container">
+    <span class="section-label">Der Ansatz</span>
+    <h2 class="section-title">Nicht zu kurz. Nicht zu lang.<br>Genau richtig.</h2>
+    <div class="approach-grid">
+      <div class="approach-block">
+        <h3>Karten, die sich einbrennen</h3>
+        <p>Du brauchst keine Lückentexte. Du brauchst Karteikarten, die klar auf die Klausur ausgelegt sind und sich nach mehrfachem Wiederholen in dein Gedächtnis einbrennen – damit du in der Prüfung sofort abrufen kannst, was du brauchst.</p>
+        <p>Jede indubio-Karte ist so formuliert, dass sie weder zu kurz noch zu überladen ist. Mit aufklappbaren <span class="approach-accent">Anmerkungsfeldern</span> in Anki erhältst du zu jeder Karte die wichtigsten Hinweise: wo das Problem in der Klausur auftaucht und wie du es formulierst.</p>
+      </div>
+      <div class="approach-block">
+        <h3>Ehrlich statt vollmundig</h3>
+        <p>indubio macht dir keine unrealistischen Versprechen. Du wirst viele Stunden lernen müssen – daran führt kein Weg vorbei. Aber indubio schenkt dir potenziell <span class="approach-accent">ein ganzes Jahr</span>, das du sonst mit Kartenformulierung verbracht hättest.</p>
+        <p>Diese gewonnene Zeit gehört dem Wesentlichen: dem Schreiben von Klausuren. Denn nur so wirst du wirklich besser – und schreibst am Ende 9+ Punkte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Audience -->
+<div class="audience">
+  <div class="audience-inner">
+    <h3>Vom ersten Semester bis zum Examen.</h3>
+    <p>Ob du gerade anfängst oder mitten in der Examensvorbereitung steckst – diese Karteikarten eignen sich für alle Jurastudierenden. Das Niveau ist klar auf das Examen ausgelegt. Stell dir vor, welchen Vorsprung es dir bringt, wenn du von Anfang an mit Inhalten lernst, die du genauso in der Klausur verwenden kannst.</p>
+  </div>
+</div>
+
+<!-- Preview -->
+<section class="preview" id="vorschau">
+  <div class="container">
+    <span class="section-label">So sehen die Karten aus</span>
+    <h2 class="section-title">Genau so landen sie bei dir in Anki.</h2>
+    <div class="preview-tabs">
+      <button class="preview-tab active" onclick="showTab('streit')">Meinungsstreit</button>
+      <button class="preview-tab" onclick="showTab('schema')">Schema</button>
+      <button class="preview-tab" onclick="showTab('definition')">Definition</button>
+      <button class="preview-tab" onclick="showTab('wissen')">Wissenskarte</button>
+    </div>
+    <div class="preview-description" id="desc-streit">Ein orangefarbenes <strong style="color:var(--accent);">(P)</strong> zeigt dir auf der Vorderseite immer an, dass es sich um einen Meinungsstreit handelt. Auf der Rückseite erhältst du die Argumente mit <strong style="color:var(--green);">✚</strong> und <strong style="color:var(--red);">⊖</strong> Symbolen sowie einer Zuordnung zur jeweiligen Auslegungsmethode (Wortlaut, Systematik, Telos, Historie oder Wertung). So lernst du nicht stumpf auswendig, sondern trainierst direkt deine juristische Argumentation.</div>
+    <div class="preview-description" id="desc-schema" style="display:none">Schemakarten geben dir den exakten Prüfungsaufbau mit allen Ober- und Unterpunkten. Erkennbar am <strong style="color:var(--green);">grünen Rahmen</strong>. Du lernst die Struktur so, wie du sie in der Klausur aufschreiben musst – Punkt für Punkt, ohne etwas zu vergessen.</div>
+    <div class="preview-description" id="desc-definition" style="display:none">Definitionskarten fragen exakte juristische Definitionen ab, gekennzeichnet durch das 🔍-Symbol. Der Wortlaut der Definition ist <strong>absolut unantastbar</strong> – Kernbegriffe sind fett hervorgehoben, damit du weißt, worauf es in der Klausur ankommt.</div>
+    <div class="preview-description" id="desc-wissen" style="display:none">Wissenskarten erklären juristische Zusammenhänge, Stufenverhältnisse und Hintergrundwissen. Kein Meinungsstreit, kein Schema – stattdessen strukturierte Erklärungen mit Beispielen und Klausurhinweisen in der Anmerkung.</div>
+
+    <div class="preview-showcase" id="tab-streit">
+      <div class="anki-card anki-front"><div class="anki-card-label">Vorderseite</div><div class="anki-card-body"><span class="anki-p">(P)</span> <span class="anki-norm">§§ 133, 157 BGB:</span><br>Wie ist eine empfangsbedürftige Willenserklärung auszulegen, wenn Erklärender und Empfänger unterschiedliche Vorstellungen über den Inhalt hatten?</div></div>
+      <div class="anki-card"><div class="anki-card-label">Rückseite</div><div class="anki-card-body"><span class="anki-m">M1 (hM):</span> Obj. Empfängerhorizont ✅<br><span class="anki-pro">✚ <span class="anki-method">(Telos)</span></span>: Schutz des Rechtsverkehrs und des Erklärungsempfängers<br><span class="anki-pro">✚ <span class="anki-method">(Systematik)</span></span>: § 157 BGB verweist auf Treu und Glauben → objektivierter Maßstab<br><br><span class="anki-m">M2:</span> Willenstheorie ❌<br><span class="anki-contra">⊖ <span class="anki-method">(Wertung)</span></span>: Vernachlässigt schutzwürdige Erwartungen des Empfängers<br><br><span class="anki-result">☑️ <strong>Ergebnis:</strong> Auslegung nach obj. Empfängerhorizont (§§ 133, 157 BGB).</span></div></div>
+      <div class="anki-annotation"><div class="anki-card-label">Anmerkung</div><div class="anki-card-body">📌 In der Klausur immer zuerst die Auslegung prüfen, bevor eine Anfechtung in Betracht kommt. Der obj. Empfängerhorizont fragt: Wie durfte ein verständiger Dritter in der Position des Empfängers die Erklärung verstehen?</div></div>
+    </div>
+    <div class="preview-showcase" id="tab-schema" style="display:none">
+      <div class="anki-card anki-front"><div class="anki-card-label">Vorderseite</div><div class="anki-card-body"><span class="anki-norm">§ 142 I BGB:</span><br>Nach welchem Schema wird die Anfechtung einer Willenserklärung geprüft?</div></div>
+      <div class="anki-card"><div class="anki-card-label">Rückseite</div><div class="anki-card-body"><div class="anki-schema"><ol><li><b>Anfechtungserklärung</b>, § 143 I BGB<br><span style="color:var(--gray);font-size:.82rem">☞ gegenüber dem Anfechtungsgegner, § 143 II–IV BGB</span></li><li><b>Anfechtungsgrund</b><ul style="list-style:none;padding-left:.8rem;margin-top:.4rem"><li>a) Inhaltsirrtum, § 119 I Alt. 1 BGB</li><li>b) Erklärungsirrtum, § 119 I Alt. 2 BGB</li><li>c) Eigenschaftsirrtum, § 119 II BGB</li><li>d) Arglistige Täuschung / Drohung, § 123 BGB</li></ul></li><li><b>Anfechtungsfrist</b><br><span style="color:var(--gray);font-size:.82rem">☞ § 121 BGB (unverzüglich) oder § 124 BGB (Jahresfrist)</span></li><li><b>Kein Ausschluss</b><br><span style="color:var(--gray);font-size:.82rem">☞ Bestätigung (§ 144 BGB), Zeitablauf</span></li></ol></div></div></div>
+      <div class="anki-annotation"><div class="anki-card-label">Anmerkung</div><div class="anki-card-body">📌 Rechtsfolge der Anfechtung: Nichtigkeit des Rechtsgeschäfts ex tunc (§ 142 I BGB). Schadensersatzanspruch des Anfechtungsgegners aus § 122 BGB (Vertrauensschaden).</div></div>
+    </div>
+    <div class="preview-showcase" id="tab-definition" style="display:none">
+      <div class="anki-card anki-front"><div class="anki-card-label">Vorderseite</div><div class="anki-card-body"><span class="anki-norm">§ 145 BGB:</span><br>Wie ist der Antrag (das Angebot) definiert?</div></div>
+      <div class="anki-card"><div class="anki-card-label">Rückseite</div><div class="anki-card-body">🔍 <span class="anki-def">Ein <b>Antrag</b> ist eine empfangsbedürftige <b>Willenserklärung</b>, durch die einem anderen ein <b>Vertragsschluss</b> so angetragen wird, dass das Zustandekommen des Vertrages nur noch von dessen <b>Einverständnis</b> abhängt.</span><br><br><span class="anki-bsp"><b>Bsp.:</b> A bietet B sein Fahrrad für 200 € zum Kauf an. B muss nur noch „Ja" sagen.</span></div></div>
+      <div class="anki-annotation"><div class="anki-card-label">Anmerkung</div><div class="anki-card-body">📌 Abgrenzung zur invitatio ad incertum: Schaufensterauslagen und Online-Shops sind i.d.R. noch kein Antrag, sondern eine Aufforderung zur Abgabe eines Angebots. Entscheidend ist der Bindungswille.</div></div>
+    </div>
+    <div class="preview-showcase" id="tab-wissen" style="display:none">
+      <div class="anki-card anki-front"><div class="anki-card-label">Vorderseite</div><div class="anki-card-body"><span class="anki-norm">§ 130 I BGB:</span><br>Wann wird eine Willenserklärung unter Abwesenden wirksam und welche Phasen durchläuft sie?</div></div>
+      <div class="anki-card"><div class="anki-card-label">Rückseite</div><div class="anki-card-body"><div style="margin-bottom:.6rem"><b style="color:var(--accent)">Vier Stufen</b> einer empfangsbedürftigen WE unter Abwesenden:</div><ul style="list-style:none;padding:0"><li style="margin-bottom:.7rem"><b>1. Abgabe:</b> Willentliches Entäußern der Erklärung in Richtung des Empfängers, sodass unter normalen Umständen mit dem Zugang zu rechnen ist.</li><li style="margin-bottom:.7rem"><b>2. Zugang (§ 130 I 1 BGB):</b> Die Erklärung gelangt so in den <u><b>Machtbereich</b></u> des Empfängers, dass dieser unter gewöhnlichen Umständen davon <b>Kenntnis nehmen kann</b>.</li><li style="margin-bottom:.7rem"><b>3. Wirksamwerden:</b> Mit Zugang – nicht erst bei tatsächlicher Kenntnisnahme.</li><li><b>4. Widerrufsmöglichkeit:</b> Bis zum Zugang frei widerrufbar (§ 130 I 2 BGB).</li></ul><br><span class="anki-bsp"><b>Bsp.:</b> Brief wird in den Briefkasten geworfen → Zugang mit nächster üblicher Leerung, auch wenn Empfänger im Urlaub ist.</span></div></div>
+      <div class="anki-annotation"><div class="anki-card-label">Anmerkung</div><div class="anki-card-body">📌 Achtung bei Einschreiben: Das Einwurf-Einschreiben geht mit Einwurf zu, das Übergabe-Einschreiben erst bei tatsächlicher Übergabe. Bei nicht abgeholtem Übergabe-Einschreiben fehlt der Zugang – Klausurklassiker!</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products-section" id="decks">
+  <div class="container">
+    <span class="section-label">Karteikarten-Decks</span>
+    <h2 class="section-title">Alle Rechtsgebiete. Ein System.</h2>
+    <p class="section-subtitle">Jedes Deck ist einzeln erhältlich. Wähle die Rechtsgebiete, die du gerade brauchst.</p>
+    <div class="products-wrapper">
+      <div class="product-column">
+        <div class="product-column-header"><span class="emoji">📜</span><h3>Zivilrecht</h3><span class="product-column-count">15 Decks</span></div>
+        <div class="product-item"><span class="product-name">BGB AT</span><div class="product-buy"><span class="product-price">29 €</span><a href="#" class="btn-buy">Kaufen</a></div></div>
+        <div class="product-item"><span class="product-name">Schuldrecht AT</span><div class="product-buy"><span class="product-price">29 €</span><a href="#" class="btn-buy">Kaufen</a></div></div>
+        <div class="product-item coming-soon"><span class="product-name">Schuldrecht BT: Vertragliche SV</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Schuldrecht BT: Deliktsrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Schuldrecht BT: Bereicherungsrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Schuldrecht BT: GoA</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Mobiliarsachenrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Immobiliarsachenrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Handelsrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Gesellschaftsrecht<small>inkl. Erneuerung durch MoPeG</small></span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Familienrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Erbrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Arbeitsrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">ZPO I: Erkenntnisverfahren</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">ZPO II: Zwangsvollstreckung</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Internationales Privatrecht</span><span class="coming-soon-badge">demnächst</span></div>
+      </div>
+      <div class="product-column">
+        <div class="product-column-header"><span class="emoji">🏛️</span><h3>Öffentliches Recht</h3><span class="product-column-count">10 Decks</span></div>
+        <div class="product-item"><span class="product-name">Allg. Verwaltungsrecht</span><div class="product-buy"><span class="product-price">29 €</span><a href="#" class="btn-buy">Kaufen</a></div></div>
+        <div class="product-item coming-soon"><span class="product-name">Staatshaftungsrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Bes. VerwR: POR<small>NRW; Hinw. auf andere Länder</small></span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Bes. VerwR: Baurecht<small>NRW; Hinw. auf andere Länder</small></span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Bes. VerwR: Kommunalrecht<small>NRW; Hinw. auf andere Länder</small></span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item"><span class="product-name">Verwaltungsprozessrecht (VwGO)</span><div class="product-buy"><span class="product-price">29 €</span><a href="#" class="btn-buy">Kaufen</a></div></div>
+        <div class="product-item coming-soon"><span class="product-name">Staatsorganisationsrecht</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Verfassungsprozessrecht<small>GG & BVerfGG</small></span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item"><span class="product-name">Grundrechte</span><div class="product-buy"><span class="product-price">29 €</span><a href="#" class="btn-buy">Kaufen</a></div></div>
+        <div class="product-item coming-soon"><span class="product-name">Europarecht</span><span class="coming-soon-badge">demnächst</span></div>
+      </div>
+      <div class="product-column">
+        <div class="product-column-header"><span class="emoji">⚔️</span><h3>Strafrecht</h3><span class="product-column-count">6 Decks</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Strafrecht AT</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Strafrecht BT I: Vermögensdelikte</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Strafrecht BT II: Körper- und Tötungsdelikte</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Strafrecht BT III: Wille, Ehre, Lebensbereich</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Strafrecht BT IV: Rechtsgüter der Allgemeinheit</span><span class="coming-soon-badge">demnächst</span></div>
+        <div class="product-item coming-soon"><span class="product-name">Strafprozessrecht (StPO)</span><span class="coming-soon-badge">demnächst</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <span class="section-label">Häufige Fragen</span>
+    <h2 class="section-title">Alles, was du wissen musst.</h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-question">Was ist Anki und woher bekomme ich es?</div><div class="faq-answer">Anki ist eine kostenlose Open-Source-Lernkartei-App mit wissenschaftlich fundierter Spaced Repetition. Du kannst Anki kostenlos unter <strong>apps.ankiweb.net</strong> herunterladen – verfügbar für Windows, Mac, Linux und Android. Die iOS-App ist kostenpflichtig.</div></div>
+      <div class="faq-item"><div class="faq-question">Wie bekomme ich die Karten in Anki?</div><div class="faq-answer">Nach dem Kauf erhältst du eine .apkg-Datei per E-Mail. Diese öffnest du einfach mit Anki – die Karten werden automatisch importiert. Das dauert weniger als eine Minute.</div></div>
+      <div class="faq-item"><div class="faq-question">Kann ich die Karten selbst bearbeiten?</div><div class="faq-answer">Ja. Anki erlaubt es dir, jede Karte nach dem Import frei zu bearbeiten, zu ergänzen oder an deinen Lernstil anzupassen. Die Karten gehören dir.</div></div>
+      <div class="faq-item"><div class="faq-question">Für welches Examen sind die Karten?</div><div class="faq-answer">Die Karten sind auf das Erste Juristische Staatsexamen (Pflichtfachprüfung) ausgerichtet. Sie decken den examensrelevanten Stoff ab, wie er in der universitären Ausbildung und den Examenskursen vermittelt wird.</div></div>
+      <div class="faq-item"><div class="faq-question">Sind die ÖR-Karten landesspezifisch?</div><div class="faq-answer">Die Karten zum Besonderen Verwaltungsrecht (POR, Baurecht, Kommunalrecht) basieren auf dem Recht in NRW, enthalten aber Hinweise auf abweichende Regelungen in anderen Bundesländern.</div></div>
+      <div class="faq-item"><div class="faq-question">Gibt es eine Rückgabe?</div><div class="faq-answer">Da es sich um digitale Produkte handelt, ist eine Rückgabe nach dem Download ausgeschlossen. Sieh dir die Vorschau oben an, um einen Eindruck von Struktur und Qualität zu bekommen.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>Bereit für die Examensvorbereitung?</h2>
+  <p>Weniger formulieren. Mehr lernen. Besser bestehen.</p>
+  <a href="#decks" class="btn-primary">Jetzt Decks ansehen ↓</a>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 indubio</div>
+  <ul class="footer-links">
+    <li><a href="/impressum">Impressum</a></li>
+    <li><a href="/datenschutz">Datenschutz</a></li>
+    <li><a href="/widerruf">Widerruf</a></li>
+  </ul>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+function showTab(id){
+  document.querySelectorAll('.preview-showcase').forEach(el=>el.style.display='none');
+  document.querySelectorAll('.preview-description').forEach(el=>el.style.display='none');
+  document.querySelectorAll('.preview-tab').forEach(el=>el.classList.remove('active'));
+  document.getElementById('tab-'+id).style.display='grid';
+  document.getElementById('desc-'+id).style.display='block';
+  event.target.classList.add('active');
+}
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)'}})},{threshold:.08});
+document.querySelectorAll('.problem-card,.anki-card,.anki-annotation,.product-column,.faq-item,.approach-block').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .5s ease,transform .5s ease';observer.observe(el)});
+</script>
+</body>
+</html>
